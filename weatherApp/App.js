@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as Location from 'expo-location';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Alert } from 'react-native';
 import Loading from './Loading';
 
 const API_KEY = '36534d3dbf4da1a8bf1cabf1635529f3';
@@ -13,7 +13,7 @@ export default class extends React.Component {
   };
   getWeather = async (latitude, longitude) => {
     const { data } = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&${longitude}&appid=${API_KEY}`,
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=36534d3dbf4da1a8bf1cabf1635529f3`,
     );
     console.log(data);
   };
